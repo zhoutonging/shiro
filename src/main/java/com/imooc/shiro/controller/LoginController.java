@@ -36,6 +36,8 @@ public class LoginController {
     public Map<String, Object> userLogin(User user, HttpSession session) {
         Map<String, Object> modelMap = new HashMap<>(16);
 
+        try {
+
         //1.获取用户信息
         Subject subject = SecurityUtils.getSubject();
 
@@ -53,7 +55,7 @@ public class LoginController {
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), password);
 
         // 3.执行登录方法
-        try {
+
             // 只要没有异常就代表登录成功
             subject.login(token);
 
