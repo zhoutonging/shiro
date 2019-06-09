@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public class AdminController {
 
     @RequestMapping("index")
     public Model index(Model model) {
@@ -22,6 +22,12 @@ public class TestController {
     @RequestMapping("reg")
     public Model reg(Model model) {
         model.addAttribute("reg");
+        return model;
+    }
+
+    @RequestMapping("userManage")
+    public Model userManage(Model model) {
+        model.addAttribute("user/userManage");
         return model;
     }
 }
