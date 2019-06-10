@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * 角色模型
+ *
+ * @author ZHOUTONG
+ */
 @Data
 @Entity(name = "role")
 public class Role {

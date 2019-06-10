@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * 权限模型
+ *
+ * @author ZHOUTONG
+ */
 @Data
 @Entity(name = "permission")
 public class Permission {

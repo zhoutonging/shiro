@@ -4,7 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-
+/**
+ * 用户模型
+ *
+ * @author ZHOUTONG
+ */
 @Data
 @Entity
 @Table(name = "user")

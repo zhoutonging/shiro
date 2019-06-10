@@ -39,13 +39,13 @@
             </ul>
             <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
 
-                <#--<li class="layui-nav-item" lay-unselect>-->
-                <#--<a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">-->
-                <#--<i class="layui-icon layui-icon-notice"></i>-->
+                <li class="layui-nav-item" lay-unselect>
+                <a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">
+                <i class="layui-icon layui-icon-notice"></i>
 
-                <#--<!-- 如果有新消息，则显示小圆点 &ndash;&gt;-->
-                <#--<span class="layui-badge-dot"></span>-->
-                <#--</a>-->
+                <!-- 如果有新消息，则显示小圆点 -->
+                <span class="layui-badge-dot"></span>
+                </a>
                 </li>
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <a href="javascript:;" layadmin-event="theme">
@@ -102,7 +102,7 @@
                                 <a lay-href="userManage">用户管理</a>
                             </dd>
                             <dd data-name="console">
-                                <a lay-href="register">角色管理</a>
+                                <a lay-href="roleManage">角色管理</a>
                             </dd>
                             <dd data-name="console">
                                 <a lay-href="login">权限管理</a>
@@ -141,7 +141,7 @@
         <!-- 主体内容 -->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
-                <iframe src="home/console.html" frameborder="0" class="layadmin-iframe"></iframe>
+                <iframe src="console" frameborder="0" class="layadmin-iframe"></iframe>
             </div>
         </div>
 

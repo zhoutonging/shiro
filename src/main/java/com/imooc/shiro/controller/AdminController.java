@@ -29,4 +29,14 @@ public class AdminController {
     public String userManage() {
         return "user/userManage";
     }
+
+    @RequestMapping("roleManage")
+    public String roleManage() {
+        return "role/roleManage";
+    }
+
+    @RequestMapping("console")
+    public String console() {
+        return "console";
+    }
 }

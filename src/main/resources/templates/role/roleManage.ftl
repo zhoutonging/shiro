@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>用户管理</title>
+    <title>数据操作 - 数据表格</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -17,7 +17,7 @@
         <a lay-href="">主页</a>
         <a><cite>组件</cite></a>
         <a><cite>数据表格</cite></a>
-        <a><cite>开启分页</cite></a>
+        <a><cite>数据操作</cite></a>
     </div>
 </div>
 
@@ -27,10 +27,10 @@
             <div class="layui-card">
                 <div class="layui-card-body">
                     <div class="layui-btn-group test-table-operate-btn" style="margin-bottom: 10px;">
-                        <button class="layui-btn" data-type="getCheckData">添加用户</button>
+                        <button class="layui-btn" data-type="getCheckData">添加角色</button>
                     </div>
 
-                    <table class="layui-hide" id="test-table-page" lay-filter="test-table-operate"></table>
+                    <table class="layui-hide" id="test-table-operate" lay-filter="test-table-operate"></table>
 
                     <script type="text/html" id="test-table-operate-barDemo">
                         <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
@@ -50,20 +50,19 @@
     }).extend({
         index: 'lib/index'
     }).use(['index', 'table'], function () {
-        var admin = layui.admin
-            , table = layui.table;
+        var table = layui.table
+            , admin = layui.admin;
 
         table.render({
-            elem: '#test-table-page',
-            url: '/user/findAll',
+            elem: '#test-table-operate',
+            url: '/role/findAll',
             page: true,
             height: 'full-100',
             cellMinWidth: 80,
             cols: [[
                 {type: 'numbers', title: '序号', align: 'center'},
-                {field: 'userName', title: '用户名', align: 'center'},
-                {field: 'password', title: '密码', align: 'center'},
-                {field: 'salt', title: '加密盐', align: 'center'},
+                {field: 'name', title: '角色名称', align: 'center'},
+                {field: 'desc', title: '角色描述', align: 'center'},
                 {align: 'center', fixed: 'right', toolbar: '#test-table-operate-barDemo'}
             ]]
         });
@@ -92,8 +91,8 @@
         var $ = layui.$, active = {
             //添加角色
             getCheckData: function () {
-                layer.msg("添加用户");
-                console.log(123)
+                layer.msg("添加角色");
+
             }
         };
 
@@ -101,6 +100,7 @@
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
         });
+
     });
 </script>
 </body>
