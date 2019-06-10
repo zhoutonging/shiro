@@ -1,10 +1,10 @@
 package com.imooc.shiro.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class AdminController {
 
     @RequestMapping("index")
@@ -26,8 +26,7 @@ public class AdminController {
     }
 
     @RequestMapping("userManage")
-    public Model userManage(Model model) {
-        model.addAttribute("user/userManage");
-        return model;
+    public String userManage() {
+        return "user/userManage";
     }
 }

@@ -25,7 +25,7 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <div class="layui-card">
-                <div class="layui-card-header">开启分页</div>
+                <div class="layui-card-header">用户管理</div>
                 <div class="layui-card-body">
                     <table class="layui-hide" id="test-table-page"></table>
                 </div>
@@ -48,10 +48,13 @@
             elem: '#test-table-page',
             url: '/user/findAll',
             page: true,
+            height: 'full-100',
+            cellMinWidth: 80,
             cols: [[
-                {field: 'id', title: 'ID', sort: true},
-                {field: 'userName', title: '用户名'},
-                {field: 'password', title: '密码'}
+                {type: 'numbers', title: '序号', align: 'center'},
+                {field: 'userName', title: '用户名', align: 'center'},
+                {field: 'password', title: '密码', align: 'center'},
+                {field: 'salt', title: '盐巴', align: 'center'}
             ]]
         });
 

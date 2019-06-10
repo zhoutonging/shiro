@@ -50,14 +50,9 @@ public class ShiroConfig {
 		//退出登录
 		filterMap.put("/logout", "logout");
 
-		//授权过滤器
-		//注意:当前授权拦截后,Shiro会自动跳转到未授权页面	
-//		filterMap.put("/add", "perms[user:add]");	//授权字符串
-//		filterMap.put("/delete", "perms[user:delete]");	//授权字符串
-		
 		// 过滤路径为根目录下的所有页面
 		filterMap.put("/**", "authc");
-		
+
 		//修改未登录就访问的默认登录页
 		shiroFilterFactoryBean.setLoginUrl("/login");
 		
