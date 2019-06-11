@@ -14,6 +14,9 @@
     ::-webkit-scrollbar {
         display: none;
     }
+    .layui-icon-layer:before{content:"\e656"}
+    .layui-icon-triangle-d:before{content:""}
+    .layui-icon-file:before{content:"\e66e"}
 </style>
 <body>
 
@@ -78,7 +81,6 @@
                 page: false,
                 cols: [[
                     {type: 'numbers', title: '序号', align: 'center'},
-                    {field: 'name', title: '权限名称', align: 'center'},
                     {field: 'desc', title: '权限描述', align: 'center'},
                     {field: 'url', title: '权限路径', align: 'center'},
                     {align: 'center', title: '操作', fixed: 'right', toolbar: '#test-table-operate-barDemo'}
