@@ -39,4 +39,9 @@ public class AdminController {
     public String console() {
         return "console";
     }
+
+    @RequestMapping("permissionManage")
+    public String permissionManage() {
+        return "permission/permissionManage";
+    }
 }

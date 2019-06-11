@@ -105,7 +105,7 @@
                                 <a lay-href="roleManage">角色管理</a>
                             </dd>
                             <dd data-name="console">
-                                <a lay-href="login">权限管理</a>
+                                <a lay-href="permissionManage">权限管理</a>
                             </dd>
                         </dl>
                     </li>

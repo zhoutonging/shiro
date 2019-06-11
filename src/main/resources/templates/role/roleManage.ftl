@@ -63,7 +63,7 @@
                 {type: 'numbers', title: '序号', align: 'center'},
                 {field: 'name', title: '角色名称', align: 'center'},
                 {field: 'desc', title: '角色描述', align: 'center'},
-                {align: 'center', fixed: 'right', toolbar: '#test-table-operate-barDemo'}
+                {align: 'center', title: '操作', fixed: 'right', toolbar: '#test-table-operate-barDemo'}
             ]]
         });
 

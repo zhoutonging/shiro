@@ -25,4 +25,7 @@ public class Permission {
 
     @Column(name = "url")
     private String url;
+
+    @Column(name = "boss_id")
+    private String bossId;
 }
