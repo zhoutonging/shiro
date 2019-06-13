@@ -97,7 +97,7 @@
             var password = $('#password').val();
 
             $.getJSON('/register', {
-                userName: userName,
+                name: userName,
                 password: password
             }, function (res) {
                 if (res.success) {
@@ -105,7 +105,7 @@
                     var int = self.setInterval(function () {
                         window.location.href = 'login';
                     }, 2000)
-                }else {
+                } else {
                     layer.msg(res.msg, {time: 2000, icon: 2});
                 }
 

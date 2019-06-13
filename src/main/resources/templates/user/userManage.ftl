@@ -60,7 +60,7 @@
             cellMinWidth: 80,
             cols: [[
                 {type: 'numbers', title: '序号', align: 'center'},
-                {field: 'userName', title: '用户名', align: 'center'},
+                {field: 'name', title: '用户名', align: 'center'},
                 {field: 'password', title: '密码', align: 'center'},
                 {field: 'salt', title: '加密盐', align: 'center'},
                 {align: 'center', title: '操作', fixed: 'right', toolbar: '#test-table-operate-barDemo'}

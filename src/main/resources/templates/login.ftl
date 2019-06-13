@@ -92,7 +92,7 @@
             var password = $('#password').val();
 
             $.getJSON('/userLogin', {
-                userName: userName,
+                name: userName,
                 password: password
             }, function (res) {
                 if (res.success) {

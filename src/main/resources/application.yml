@@ -18,7 +18,8 @@ spring:
   devtools:
     restart:
       enabled: true  #设置开启热部署
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+mybatis-plus:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.imooc.shiro.model
+  configuration:
+    map-underscore-to-camel-case: true
