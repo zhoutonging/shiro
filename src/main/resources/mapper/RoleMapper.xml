@@ -8,4 +8,14 @@
         id, name, desc_
     </sql>
 
+    <select id="findByUserId" parameterType="java.lang.String" resultType="java.util.HashMap">
+        SELECT
+            *
+        FROM
+            role a
+            LEFT JOIN user_role b ON a.id = b.rid
+        WHERE
+            b.uid =#{userId}
+    </select>
+
 </mapper>

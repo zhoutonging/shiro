@@ -56,9 +56,6 @@ public class ShiroConfig {
 		//修改未登录就访问的默认登录页
 		shiroFilterFactoryBean.setLoginUrl("/login");
 
-		//设置未授权提示页面
-		shiroFilterFactoryBean.setUnauthorizedUrl("/noAuth");
-
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
 		return shiroFilterFactoryBean;

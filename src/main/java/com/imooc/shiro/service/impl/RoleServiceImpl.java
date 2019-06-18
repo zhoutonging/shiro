@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 服务实现类
@@ -27,4 +28,8 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
         return roleMapper.selectList(new EntityWrapper<>());
     }
 
+    @Override
+    public List<Map<String, Object>> findByUserId(Integer userId) {
+        return roleMapper.findByUserId(userId);
+    }
 }

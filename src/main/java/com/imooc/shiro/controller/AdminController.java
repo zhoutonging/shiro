@@ -44,4 +44,9 @@ public class AdminController {
     public String permissionManage() {
         return "permission/permissionManage";
     }
+
+    @RequestMapping("errorRole")
+    public String errorRole() {
+        return "errorRole";
+    }
 }

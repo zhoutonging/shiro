@@ -3,6 +3,7 @@ package com.imooc.shiro.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.imooc.shiro.model.User;
+import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserService;
 import com.imooc.shiro.utils.LayuiResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private RoleService roleService;
 
     /**
      * 查询用户列表
@@ -46,6 +49,24 @@ public class UserController {
     @RequestMapping("findByUserAndRole")
     public LayuiResult findByUserAndRole() {
         List<Map<String, Object>> mapList = userService.selectMaps();
+
+        for (int i = 0; i < mapList.size(); i++) {
+            Integer userId = (Integer) mapList.get(i).get("userId");
+
+
+        }
+
+        return LayuiResult.success(mapList);
+    }
+
+
+    @RequestMapping("findByUserId")
+    public LayuiResult findByUserId(Integer userId) {
+        if (userId == null) {
+            return LayuiResult.fail("userId不能为空");
+        }
+
+        List<Map<String, Object>> mapList = roleService.findByUserId(userId);
         return LayuiResult.success(mapList);
     }
 }

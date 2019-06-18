@@ -12,6 +12,10 @@ import java.util.List;
  * @since 2019-06-11
  */
 public interface PermissionService extends IService<Permission> {
-
+    /**
+     * 查询权限列表
+     *
+     * @return
+     */
     List<Permission> findAll();
 }

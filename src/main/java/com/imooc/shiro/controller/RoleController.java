@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 前端控制器
@@ -23,10 +24,25 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
+    /**
+     * 查询某个用户所拥有的角色
+     *
+     * @return
+     */
     @RequestMapping("findAll")
     public LayuiResult findAll() {
         List<Role> roleList = roleService.findAll();
         return LayuiResult.success(roleList);
+    }
+
+    @RequestMapping("findByUserId")
+    public LayuiResult findByUserId(Integer userId) {
+        if (userId == null) {
+            return LayuiResult.fail("userId不能为空");
+        }
+
+        List<Map<String, Object>> mapList = roleService.findByUserId(userId);
+        return LayuiResult.success(mapList);
     }
 }
 

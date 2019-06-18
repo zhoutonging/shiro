@@ -1,54 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a02146fd-055b-4f08-b445-8ae0610580be" name="Default Changelist" comment="整合MybatisPlus">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/PermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RolePermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/PermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RolePermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/UserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/RolePermission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RolePermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/UserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RolePermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/UserRoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="a02146fd-055b-4f08-b445-8ae0610580be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/errorRole.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/ShiroApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/ShiroApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reg.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reg.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/userManage.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/userManage.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/shiro/ShiroApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/shiro/ShiroApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/reg.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reg.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +26,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="1475">
+              <caret line="74" column="9" selection-start-line="71" selection-start-column="26" selection-end-line="74" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2225">
+              <caret line="106" column="104" selection-start-line="106" selection-start-column="104" selection-end-line="106" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/errorRole.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -79,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>required</find>
       <find>登录成功</find>
       <find>登录</find>
       <find>退出</find>
@@ -109,6 +98,7 @@
       <find>\e623</find>
       <find>\e625</find>
       <find>\e621</find>
+      <find>noAuth</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -133,20 +123,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/common/layuiadmin/tpl/system/说明.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/console.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/role/roleManage.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/static/common/layuiadmin/modules/treetable-lay/treetable.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/common/layuiadmin/layui/css/layui.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/common/layuiadmin/modules/treetable/treetable.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/permission/permissionManage.ftl" />
         <option value="$PROJECT_DIR$/src/test/java/com/imooc/shiro/MyBatisPlusGenerator.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/PermissionMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RolePermissionMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/UserRoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/model/Permission.java" />
@@ -161,24 +146,29 @@
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RolePermissionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserRoleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/ShiroApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/userManage.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/reg.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/PermissionServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/PermissionController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/PermissionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java" />
       </list>
     </option>
   </component>
@@ -209,8 +199,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,7 +273,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="imooc" type="462c0819:PsiDirectoryNode" />
               <item name="shiro" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shiro" type="b2602c69:ProjectViewProjectNode" />
@@ -309,24 +299,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shiro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shiro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shiro" type="b2602c69:ProjectViewProjectNode" />
               <item name="shiro" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,30 +320,30 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560430856022" />
-    <property name="last_opened_file_path" value="D:/SVN" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560815131379" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ZCF\shiro\src\main\resources\mapper" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ZCF\shiro\src\main\resources\templates" />
+      <recent name="D:\ZCF\shiro\src\test\java\com\imooc\shiro" />
+      <recent name="D:\ZCF\shiro\src\main\resources\static\common\layuiadmin\modules" />
+      <recent name="D:\ZCF\shiro\src\main\resources\templates\permission" />
+      <recent name="D:\ZCF\shiro\src\main\resources\templates\role" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.imooc.shiro.service.impl" />
       <recent name="com.imooc.shiro.service" />
       <recent name="com.imooc.shiro.utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ZCF\shiro\src\test\java\com\imooc\shiro" />
-      <recent name="D:\ZCF\shiro\src\main\resources\static\common\layuiadmin\modules" />
-      <recent name="D:\ZCF\shiro\src\main\resources\templates\permission" />
-      <recent name="D:\ZCF\shiro\src\main\resources\templates" />
-      <recent name="D:\ZCF\shiro\src\main\resources\templates\role" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ZCF\shiro\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -414,7 +393,18 @@
       <workItem from="1560260303637" duration="3425000" />
       <workItem from="1560302737471" duration="454000" />
       <workItem from="1560330492234" duration="281000" />
-      <workItem from="1560424577077" duration="5589000" />
+      <workItem from="1560424577077" duration="6622000" />
+      <workItem from="1560472118671" duration="637000" />
+      <workItem from="1560727015107" duration="695000" />
+      <workItem from="1560730439441" duration="601000" />
+      <workItem from="1560739964397" duration="612000" />
+      <workItem from="1560752355161" duration="6000" />
+      <workItem from="1560752408410" duration="157000" />
+      <workItem from="1560754415396" duration="7328000" />
+      <workItem from="1560770706623" duration="654000" />
+      <workItem from="1560772643233" duration="4042000" />
+      <workItem from="1560813191542" duration="1405000" />
+      <workItem from="1560817841990" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="try位置">
       <created>1560038086176</created>
@@ -458,17 +448,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560255902512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="整合MybatisPlus">
+      <created>1560431611915</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560431611915</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90243000" />
+    <option name="totallyTimeSpent" value="108012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29510397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28169015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -479,7 +476,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46368715" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4273743" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -518,13 +515,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="整合MybatisPlus" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/common/layuiadmin/tpl/system/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/console.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-633">
@@ -543,13 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="146" column="33" lean-forward="true" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1109">
-          <caret line="99" column="52" lean-forward="true" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -579,37 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/imooc/shiro/MyBatisPlusGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#index#0;class#AdminController#0" />
-            <element signature="method#login#0;class#AdminController#0" />
-            <element signature="method#reg#0;class#AdminController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -739,26 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1675">
-          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="43" column="2" lean-forward="true" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -780,38 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/role/roleManage.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1866">
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,34 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/PermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding>
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,24 +778,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="300">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        <state relative-caret-position="391">
+          <caret line="68" column="75" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/impl/PermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="95" column="81" selection-start-line="95" selection-start-column="81" selection-end-line="95" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/service/RoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="250">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/mapper/RoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2450">
+          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#index#0;class#AdminController#0" />
+            <element signature="method#login#0;class#AdminController#0" />
+            <element signature="method#reg#0;class#AdminController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/shiro/UserRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1475">
+          <caret line="74" column="9" selection-start-line="71" selection-start-column="26" selection-end-line="74" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/imooc/shiro/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2225">
+          <caret line="106" column="104" selection-start-line="106" selection-start-column="104" selection-end-line="106" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/errorRole.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
         </state>
       </provider>
     </entry>
