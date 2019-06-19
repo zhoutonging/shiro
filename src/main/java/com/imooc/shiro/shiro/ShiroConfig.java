@@ -1,5 +1,7 @@
 package com.imooc.shiro.shiro;
 
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -7,74 +9,55 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Configuration
 public class ShiroConfig {
 
-    /**
-     * 创建ShiroFilterFactoryBean
-     */
     @Bean
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(
-            @Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
+    public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
+        System.out.println("执行 ShiroFilterFactoryBean shiroFilter");
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
 
-        // 设置安全管理器
+        //必须设置securityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
+        //认证的接口如果没有登录则会跳到登录页面
+        shiroFilterFactoryBean.setLoginUrl("/login");
+        //登录后无权限调用的接口
+        shiroFilterFactoryBean.setUnauthorizedUrl("/errorRole");
 
-        /**
-         * Shiro内置过滤器,可以实现权限的拦截 常用的过滤器:
-         * 		anon:无需认证(登录)可以访问
-         *      anthc:必须认证才可以访问
-         * 		user:如果使用remember的功能可以访问
-         *		perms:该资源必须得到资源权限才可以访问
-         *		role:该资源必须得到角色权限才可以访问
-         */
-        Map<String, String> filterMap = new HashMap<String, String>();
+        Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 
         // 放行以下页面
-        filterMap.put("/login", "anon");
-        filterMap.put("/userLogin", "anon");
-        filterMap.put("/register", "anon");
-        filterMap.put("/reg", "anon");
-        filterMap.put("/static/**", "anon");
+        filterChainDefinitionMap.put("/login", "anon");
+        filterChainDefinitionMap.put("/userLogin", "anon");
+        filterChainDefinitionMap.put("/register", "anon");
+        filterChainDefinitionMap.put("/reg", "anon");
+        filterChainDefinitionMap.put("/static/**", "anon");
+
+        filterChainDefinitionMap.put("/role/**", "roles[admin]");
 
         //退出登录
-        filterMap.put("/logout", "logout");
-        //无权限访问调用的页面
-
-
+        filterChainDefinitionMap.put("/logout", "logout");
         // 过滤路径为根目录下的所有页面
-        filterMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/**", "authc");
 
-        //修改未登录就访问的默认登录页
-        shiroFilterFactoryBean.setLoginUrl("/login");
-
-        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
-
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
 
-    /**
-     * 创建DefaultWebSecurityManager
-     */
-    @Bean(name = "securityManager")
-    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm) {
+    @Bean
+    public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-
-        // 关联Realm
-        securityManager.setRealm(userRealm);
+        securityManager.setRealm(userRealm());
         return securityManager;
     }
 
-    /**
-     * 创建Realm
-     */
-    @Bean(name = "userRealm")
-    public UserRealm getRealm() {
-
-        return new UserRealm();
+    @Bean
+    public UserRealm userRealm(){
+        UserRealm userRealm = new UserRealm();
+        return userRealm;
     }
 
 }

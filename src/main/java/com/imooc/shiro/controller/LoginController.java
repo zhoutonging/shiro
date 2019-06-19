@@ -37,11 +37,16 @@ public class LoginController {
         Map<String, Object> modelMap = new HashMap<>(16);
 
         try {
-
             //1.获取用户信息
             Subject subject = SecurityUtils.getSubject();
 
             User user1 = userService.findByName(user.getName());
+
+            if (user1 == null) {
+                modelMap.put("success", false);
+                modelMap.put("msg", "帐号或密码错误");
+                return modelMap;
+            }
 
             //运算次数
             int count = 2;
