@@ -1,8 +1,12 @@
 package com.imooc.shiro.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.imooc.shiro.dto.RoleDto;
+import com.imooc.shiro.dto.UserDto;
+import com.imooc.shiro.model.Role;
 import com.imooc.shiro.model.User;
 import com.imooc.shiro.mapper.UserMapper;
+import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +27,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RoleService roleService;
+
     @Override
     public User findByName(String userName) {
 
@@ -42,5 +49,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public List<Map<String, Object>> selectMaps() {
         return userMapper.selectMaps();
+    }
+
+    @Override
+    public UserDto findAllUserInfoByName(String username) {
+        UserDto userDto = userMapper.findUserDtoByName(username);
+
+//        用户的角色集合
+        List<RoleDto> roleList = roleService.findRoleListByUserId(userDto.getId());
+
+        userDto.setRoleList(roleList);
+        return userDto;
+    }
+
+    @Override
+    public User findSimpleUserInfoById(Integer userId) {
+        return userMapper.selectById(userId);
     }
 }

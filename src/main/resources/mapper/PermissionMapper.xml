@@ -8,4 +8,15 @@
         id, name, desc_, url, boss_id
     </sql>
 
+    <!--根据roleId查询权限列表-->
+    <select id="findPermissionListByRoleId" resultType="com.imooc.shiro.model.Permission" parameterType="java.lang.String">
+        SELECT
+            b.id id,b.name name,b.url yrl
+        FROM
+            role_permission a
+            LEFT JOIN permission b ON a.pid = b.id
+        WHERE
+            a.rid = #{roleId}
+    </select>
+
 </mapper>

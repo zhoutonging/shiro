@@ -1,17 +1,16 @@
 package com.imooc.shiro.shiro;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.imooc.shiro.model.Role;
+import com.imooc.shiro.dto.RoleDto;
+import com.imooc.shiro.dto.UserDto;
+import com.imooc.shiro.model.Permission;
 import com.imooc.shiro.model.User;
 import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserService;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -30,34 +29,47 @@ public class UserRealm extends AuthorizingRealm {
     private RoleService roleService;
 
     /**
-     * 执行授权逻辑
+     * 用户进行授权时调用
+     *
+     * @param principals
+     * @return
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         System.out.println("执行授权逻辑");
         User user = (User) principals.getPrimaryPrincipal();
+        UserDto userDto = userService.findAllUserInfoByName(user.getName());
 
-        List<String> permissions = new ArrayList<String>();
-        List<String> roles = new ArrayList<>();
+        //角色
+        List<String> stringRoleList = new ArrayList<>();
+        //权限
+        List<String> stringPermissionList = new ArrayList<>();
 
-        if ("admin".equals(user.getName())) {
-            //拥有所有权限
-            permissions.add("*:*");
+        List<RoleDto> roleDtoList = userDto.getRoleList();
+        for (RoleDto roleDto : roleDtoList) {
+            stringRoleList.add(roleDto.getName());
+            List<Permission> permissionList = roleDto.getPermissionList();
 
-            //查询所有角色
-            List<Role> roleList = roleService.selectList(new EntityWrapper<Role>());
-
-            for (Role role : roleList) {
-                roles.add(role.getDesc());
+            for (Permission permission : permissionList) {
+                if (permission != null) {
+                    stringPermissionList.add(permission.getName());
+                }
             }
-
         }
 
-        return null;
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.addRoles(stringRoleList);
+        simpleAuthorizationInfo.addStringPermissions(stringPermissionList);
+
+        return simpleAuthorizationInfo;
     }
 
     /**
-     * 执行认证逻辑
+     * 用户登录时会调用认证
+     *
+     * @param arg0
+     * @return
+     * @throws AuthenticationException
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken arg0) throws AuthenticationException {
@@ -75,7 +87,7 @@ public class UserRealm extends AuthorizingRealm {
         }
 
 //		2.判断密码
-        return new SimpleAuthenticationInfo(user, user.getPassword(), "");
+        return new SimpleAuthenticationInfo(user, user.getPassword(), this.getClass().getName());
     }
 
 }

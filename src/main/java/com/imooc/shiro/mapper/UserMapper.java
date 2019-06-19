@@ -1,8 +1,8 @@
 package com.imooc.shiro.mapper;
 
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.imooc.shiro.model.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.imooc.shiro.dto.UserDto;
+import com.imooc.shiro.model.User;
 
 import java.util.List;
 import java.util.Map;
@@ -31,4 +31,6 @@ public interface UserMapper extends BaseMapper<User> {
      * @return
      */
     List<Map<String, Object>> selectMaps();
+
+    UserDto findUserDtoByName(String name);
 }

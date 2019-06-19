@@ -1,5 +1,6 @@
 package com.imooc.shiro.service;
 
+import com.imooc.shiro.dto.UserDto;
 import com.imooc.shiro.model.User;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -42,4 +43,21 @@ public interface UserService extends IService<User> {
      * @return
      */
     List<Map<String, Object>> selectMaps();
+
+    /**
+     * 获取用户全部信息,包括角色权限
+     *
+     * @param username
+     * @return
+     */
+    UserDto findAllUserInfoByName(String username);
+
+    /**
+     * 根据用户Id获取用户基本信息
+     *
+     * @param userId
+     * @return
+     */
+    User findSimpleUserInfoById(Integer userId);
+
 }

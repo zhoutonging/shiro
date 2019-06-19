@@ -21,4 +21,11 @@
         LEFT JOIN role c ON b.rid=c.id
     </select>
 
+    <!--根据用户名称查询信息(包括角色权限)-->
+    <select id="findUserDtoByName" parameterType="java.lang.String" resultType="com.imooc.shiro.dto.UserDto">
+        select id, name, password, salt from user
+        where name = #{name}
+    </select>
+
+
 </mapper>

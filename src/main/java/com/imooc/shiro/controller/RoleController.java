@@ -35,14 +35,5 @@ public class RoleController {
         return LayuiResult.success(roleList);
     }
 
-    @RequestMapping("findByUserId")
-    public LayuiResult findByUserId(Integer userId) {
-        if (userId == null) {
-            return LayuiResult.fail("userId不能为空");
-        }
-
-        List<Map<String, Object>> mapList = roleService.findByUserId(userId);
-        return LayuiResult.success(mapList);
-    }
 }
 

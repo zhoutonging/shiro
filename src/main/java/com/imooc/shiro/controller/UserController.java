@@ -50,24 +50,8 @@ public class UserController {
     public LayuiResult findByUserAndRole() {
         List<Map<String, Object>> mapList = userService.selectMaps();
 
-        for (int i = 0; i < mapList.size(); i++) {
-            Integer userId = (Integer) mapList.get(i).get("userId");
-
-
-        }
-
         return LayuiResult.success(mapList);
     }
 
-
-    @RequestMapping("findByUserId")
-    public LayuiResult findByUserId(Integer userId) {
-        if (userId == null) {
-            return LayuiResult.fail("userId不能为空");
-        }
-
-        List<Map<String, Object>> mapList = roleService.findByUserId(userId);
-        return LayuiResult.success(mapList);
-    }
 }
 

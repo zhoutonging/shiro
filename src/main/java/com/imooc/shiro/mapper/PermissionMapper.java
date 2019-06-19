@@ -3,9 +3,11 @@ package com.imooc.shiro.mapper;
 import com.imooc.shiro.model.Permission;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author CC
@@ -13,4 +15,11 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface PermissionMapper extends BaseMapper<Permission> {
 
+    /**
+     * 根据roleId查询权限列表
+     *
+     * @param roleId
+     * @return
+     */
+    List<Permission> findPermissionListByRoleId(String roleId);
 }

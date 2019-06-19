@@ -1,6 +1,7 @@
 package com.imooc.shiro.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.imooc.shiro.dto.RoleDto;
 import com.imooc.shiro.model.Role;
 import com.imooc.shiro.mapper.RoleMapper;
 import com.imooc.shiro.service.RoleService;
@@ -29,7 +30,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
     }
 
     @Override
-    public List<Map<String, Object>> findByUserId(Integer userId) {
-        return roleMapper.findByUserId(userId);
+    public List<RoleDto> findRoleListByUserId(Integer userId) {
+        return roleMapper.findRoleListByUserId(userId);
     }
 }

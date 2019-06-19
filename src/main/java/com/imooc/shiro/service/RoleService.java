@@ -1,5 +1,6 @@
 package com.imooc.shiro.service;
 
+import com.imooc.shiro.dto.RoleDto;
 import com.imooc.shiro.model.Role;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -22,10 +23,10 @@ public interface RoleService extends IService<Role> {
     List<Role> findAll();
 
     /**
-     * 查询某个用户所拥有的角色
+     * 根据userId查询角色集合
      *
      * @param userId
      * @return
      */
-    List<Map<String, Object>> findByUserId(Integer userId);
+    List<RoleDto> findRoleListByUserId(Integer userId);
 }
