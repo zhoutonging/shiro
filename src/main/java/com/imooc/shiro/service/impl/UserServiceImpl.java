@@ -66,4 +66,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public User findSimpleUserInfoById(Integer userId) {
         return userMapper.selectById(userId);
     }
+
+    @Override
+    public void deleteById(String id) {
+        userMapper.deleteById(id);
+    }
 }

@@ -1,22 +1,25 @@
 package com.imooc.shiro.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.imooc.shiro.model.User;
+import com.imooc.shiro.model.UserRole;
+import com.imooc.shiro.service.UserRoleService;
 import com.imooc.shiro.service.UserService;
-import org.apache.shiro.codec.CodecException;
-import org.apache.shiro.crypto.UnknownAlgorithmException;
-import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -24,6 +27,9 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRoleService userRoleService;
 
     /**
      * 用户登录
@@ -88,13 +94,12 @@ public class LoginController {
      * @return
      */
     @RequestMapping("/register")
-    public Map<String, Object> register(User user) {
+    public Map<String, Object> register(User user, String roles) {
+
         Map<String, Object> modelMap = new HashMap<>(16);
 
         try {
-
             User user1 = userService.findByName(user.getName());
-
 
             if (user1 != null) {
                 modelMap.put("success", false);
@@ -114,6 +119,24 @@ public class LoginController {
             user.setPassword(password);
             user.setSalt(salt);
             userService.save(user);
+
+            //为用户添加角色
+            List<String> list = new ArrayList<>();
+
+           User user2 = userService.findByName(user.getName());
+
+            if (roles != null) {
+                JSONArray jsonArray = (JSONArray) JSONArray.parse(roles);
+                jsonArray.forEach(t -> list.add((String) t));
+
+                UserRole userRole = new UserRole();
+                userRole.setUid(user2.getId());
+
+                for (int i = 0; i < list.size(); i++) {
+                    userRole.setRid(Long.valueOf(list.get(i)));
+                    userRoleService.insert(userRole);
+                }
+            }
 
             modelMap.put("success", true);
             modelMap.put("msg", "注册成功");

@@ -76,7 +76,7 @@
 
             } else if (obj.event === 'del') {
 
-                layer.confirm('真的删除行么', function (index) {
+                layer.confirm('真的删除数据吗?这将无法恢复', function (index) {
                     obj.del();
                     layer.close(index);
                 });
@@ -91,8 +91,14 @@
         var $ = layui.$, active = {
             //添加角色
             getCheckData: function () {
-                layer.msg("添加用户");
-                console.log(123)
+                //弹出即全屏
+                var index = layer.open({
+                    type: 2,
+                    title: '添加用户',
+                    content: '/userAdd',
+                    area: ['100%', '100%']
+                });
+
             }
         };
 

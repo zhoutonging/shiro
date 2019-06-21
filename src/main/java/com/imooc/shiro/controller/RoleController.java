@@ -5,11 +5,11 @@ import com.imooc.shiro.model.Role;
 import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.utils.LayuiResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 前端控制器
@@ -25,11 +25,11 @@ public class RoleController {
     private RoleService roleService;
 
     /**
-     * 查询某个用户所拥有的角色
+     * 查询角色列表
      *
      * @return
      */
-    @RequestMapping("findAll")
+    @GetMapping("findAll")
     public LayuiResult findAll() {
         List<Role> roleList = roleService.findAll();
         return LayuiResult.success(roleList);

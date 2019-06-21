@@ -49,4 +49,9 @@ public class AdminController {
     public String errorRole() {
         return "errorRole";
     }
+
+    @RequestMapping("userAdd")
+    public String userAdd() {
+        return "user/userAdd";
+    }
 }

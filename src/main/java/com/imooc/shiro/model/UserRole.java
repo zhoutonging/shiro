@@ -11,10 +11,12 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 用户与角色关联模型
+ * <p>
+ * 
+ * </p>
  *
  * @author CC
- * @since 2019-06-11
+ * @since 2019-06-21
  */
 @Data
 @TableName("user_role")
@@ -31,5 +33,6 @@ public class UserRole extends Model<UserRole> {
     protected Serializable pkVal() {
         return this.id;
     }
+
 
 }

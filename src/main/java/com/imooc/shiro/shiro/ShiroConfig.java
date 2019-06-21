@@ -4,10 +4,13 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,6 +30,15 @@ public class ShiroConfig {
         //登录后无权限调用的接口
         shiroFilterFactoryBean.setUnauthorizedUrl("/errorRole");
 
+
+        /**
+         * 设置自定义filter
+         */
+        Map<String, Filter> filterMap = new LinkedHashMap<>();
+        filterMap.put("roleOrFilter", new UserRolesOrAuthorizationFilter());
+
+        shiroFilterFactoryBean.setFilters(filterMap);
+
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 
         // 放行以下页面
@@ -36,7 +48,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/reg", "anon");
         filterChainDefinitionMap.put("/static/**", "anon");
 
-        filterChainDefinitionMap.put("/role/**", "roles[admin]");
+        filterChainDefinitionMap.put("/role/**", "roleOrFilter[admin,root]");
 
         //退出登录
         filterChainDefinitionMap.put("/logout", "logout");
@@ -51,6 +63,8 @@ public class ShiroConfig {
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(userRealm());
+        //使用自定义的cacheManager
+        securityManager.setCacheManager(redisCacheManager());
         return securityManager;
     }
 
@@ -58,6 +72,28 @@ public class ShiroConfig {
     public UserRealm userRealm(){
         UserRealm userRealm = new UserRealm();
         return userRealm;
+    }
+
+    /**
+     * 配置redisManager
+     */
+    public RedisManager getRedisManager(){
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost("localhost");
+        redisManager.setPort(6379);
+        return redisManager;
+    }
+
+    /**
+     * 配置具体的cache实现类
+     * @return
+     */
+    public RedisCacheManager redisCacheManager(){
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setRedisManager(getRedisManager());
+        //设置过期时间,单位S
+        redisCacheManager.setExpire(20);
+        return redisCacheManager;
     }
 
 }
