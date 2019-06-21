@@ -1,5 +1,6 @@
 package com.imooc.shiro.mapper;
 
+import com.imooc.shiro.dto.RolePermissionDto;
 import com.imooc.shiro.model.Permission;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
@@ -22,4 +23,11 @@ public interface PermissionMapper extends BaseMapper<Permission> {
      * @return
      */
     List<Permission> findPermissionListByRoleId(String roleId);
+
+    /**
+     * 查询角色可以访问的权限
+     *
+     * @return
+     */
+    List<RolePermissionDto> findRolePermission();
 }

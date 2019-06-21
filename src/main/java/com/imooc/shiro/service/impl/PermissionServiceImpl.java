@@ -1,6 +1,7 @@
 package com.imooc.shiro.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.imooc.shiro.dto.RolePermissionDto;
 import com.imooc.shiro.model.Permission;
 import com.imooc.shiro.mapper.PermissionMapper;
 import com.imooc.shiro.service.PermissionService;
@@ -25,5 +26,10 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
     @Override
     public List<Permission> findAll() {
         return permissionMapper.selectList(new EntityWrapper<>());
+    }
+
+    @Override
+    public List<RolePermissionDto> findRolePermission() {
+        return permissionMapper.findRolePermission();
     }
 }

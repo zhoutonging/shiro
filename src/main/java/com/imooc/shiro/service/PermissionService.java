@@ -1,5 +1,6 @@
 package com.imooc.shiro.service;
 
+import com.imooc.shiro.dto.RolePermissionDto;
 import com.imooc.shiro.model.Permission;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -18,4 +19,11 @@ public interface PermissionService extends IService<Permission> {
      * @return
      */
     List<Permission> findAll();
+
+    /**
+     * 查询角色可以访问的权限
+     *
+     * @return
+     */
+    List<RolePermissionDto> findRolePermission();
 }

@@ -6,7 +6,9 @@ import com.imooc.shiro.dto.UserDto;
 import com.imooc.shiro.model.Role;
 import com.imooc.shiro.model.User;
 import com.imooc.shiro.mapper.UserMapper;
+import com.imooc.shiro.model.UserRole;
 import com.imooc.shiro.service.RoleService;
+import com.imooc.shiro.service.UserRoleService;
 import com.imooc.shiro.service.UserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private UserRoleService userRoleService;
 
     @Override
     public User findByName(String userName) {
@@ -68,7 +73,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public void deleteById(String id) {
-        userMapper.deleteById(id);
+    public void removeById(Integer id) {
+        userRoleService.delete(new EntityWrapper<UserRole>().eq("uid", id));
+        this.deleteById(Long.valueOf(id));
     }
 }

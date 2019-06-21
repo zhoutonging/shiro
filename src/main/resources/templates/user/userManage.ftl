@@ -49,8 +49,7 @@
     }).extend({
         index: 'lib/index'
     }).use(['index', 'table'], function () {
-        var admin = layui.admin
-            , table = layui.table;
+        var admin = layui.admin, table = layui.table, form = layui.form;
 
         table.render({
             elem: '#test-table-page',
@@ -77,8 +76,14 @@
             } else if (obj.event === 'del') {
 
                 layer.confirm('真的删除数据吗?这将无法恢复', function (index) {
-                    obj.del();
-                    layer.close(index);
+                    $.get('/user/deleteById', {id: data.id}, function (res) {
+                        if (res.code == 0) {
+                            obj.del();
+                            layer.msg(res.msg, {time: 2000, icon: 1});
+                        } else {
+                            layer.msg(res.msg, {time: 2000, icon: 2});
+                        }
+                    })
                 });
 
             } else if (obj.event === 'edit') {

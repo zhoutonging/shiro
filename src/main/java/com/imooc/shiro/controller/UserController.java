@@ -7,6 +7,8 @@ import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserService;
 import com.imooc.shiro.utils.LayuiResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -49,8 +51,26 @@ public class UserController {
     @RequestMapping("findByUserAndRole")
     public LayuiResult findByUserAndRole() {
         List<Map<String, Object>> mapList = userService.selectMaps();
-
         return LayuiResult.success(mapList);
+    }
+
+    /**
+     * 删除用户及角色关联
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("deleteById")
+    public LayuiResult deleteById(Integer id) {
+
+        try {
+            userService.removeById(id);
+            return LayuiResult.success("删除成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return LayuiResult.fail("删除失败");
+
+        }
     }
 
 }

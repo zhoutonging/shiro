@@ -60,5 +60,5 @@ public interface UserService extends IService<User> {
      */
     User findSimpleUserInfoById(Integer userId);
 
-    void deleteById(String id);
+    void removeById(Integer id);
 }

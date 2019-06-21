@@ -1,11 +1,15 @@
 package com.imooc.shiro.shiro;
 
+import com.imooc.shiro.dto.RolePermissionDto;
+import com.imooc.shiro.model.Permission;
+import com.imooc.shiro.service.PermissionService;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.crazycake.shiro.RedisCacheManager;
 import org.crazycake.shiro.RedisManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +17,14 @@ import org.springframework.context.annotation.Configuration;
 import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Configuration
 public class ShiroConfig {
+
+    @Autowired
+    private PermissionService permissionService;
 
     @Bean
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
@@ -29,6 +37,8 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login");
         //登录后无权限调用的接口
         shiroFilterFactoryBean.setUnauthorizedUrl("/errorRole");
+
+        List<RolePermissionDto> rolePermissionDtoList = permissionService.findRolePermission();
 
 
         /**
@@ -48,7 +58,11 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/reg", "anon");
         filterChainDefinitionMap.put("/static/**", "anon");
 
-        filterChainDefinitionMap.put("/role/**", "roleOrFilter[admin,root]");
+        //查询角色可以访问的权限
+        for (RolePermissionDto rolePermissionDto : rolePermissionDtoList) {
+            filterChainDefinitionMap.put(rolePermissionDto.getUrl(), "roleOrFilter[" + rolePermissionDto.getName() + "]");
+        }
+
 
         //退出登录
         filterChainDefinitionMap.put("/logout", "logout");
@@ -69,7 +83,7 @@ public class ShiroConfig {
     }
 
     @Bean
-    public UserRealm userRealm(){
+    public UserRealm userRealm() {
         UserRealm userRealm = new UserRealm();
         return userRealm;
     }
@@ -77,7 +91,7 @@ public class ShiroConfig {
     /**
      * 配置redisManager
      */
-    public RedisManager getRedisManager(){
+    public RedisManager getRedisManager() {
         RedisManager redisManager = new RedisManager();
         redisManager.setHost("localhost");
         redisManager.setPort(6379);
@@ -86,9 +100,10 @@ public class ShiroConfig {
 
     /**
      * 配置具体的cache实现类
+     *
      * @return
      */
-    public RedisCacheManager redisCacheManager(){
+    public RedisCacheManager redisCacheManager() {
         RedisCacheManager redisCacheManager = new RedisCacheManager();
         redisCacheManager.setRedisManager(getRedisManager());
         //设置过期时间,单位S
