@@ -33,4 +33,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
     public List<RoleDto> findRoleListByUserId(Integer userId) {
         return roleMapper.findRoleListByUserId(userId);
     }
+
+    @Override
+    public List<Role> findByUserId(Integer userId) {
+        return roleMapper.findByUserId(userId);
+    }
 }

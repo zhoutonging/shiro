@@ -36,4 +36,11 @@ public interface RoleMapper extends BaseMapper<Role> {
             }
     )
     List<RoleDto> findRoleListByUserId(Integer userId);
+
+    /**
+     * 根据用户Id查询所拥有的角色
+     * @param userId
+     * @return
+     */
+    List<Role> findByUserId(Integer userId);
 }

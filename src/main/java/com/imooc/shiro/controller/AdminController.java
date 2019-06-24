@@ -54,4 +54,9 @@ public class AdminController {
     public String userAdd() {
         return "user/userAdd";
     }
+
+    @RequestMapping("userUpdate")
+    public String userUpdate() {
+        return "user/userUpdate";
+    }
 }

@@ -16,6 +16,29 @@ import java.util.Map;
 public interface UserService extends IService<User> {
 
     /**
+     * 注册用户
+     *
+     * @param user
+     */
+    void save(User user);
+
+    /**
+     * 删除用户及关联角色
+     *
+     * @param id
+     */
+    void removeById(Integer id);
+
+    /**
+     * 根据用户id修改信息及角色
+     *
+     * @param user
+     * @param password 修改前密码
+     */
+
+    void modifyByUserId(User user, String password);
+
+    /**
      * 根据用户名查询用户是否存在
      *
      * @param userName
@@ -23,12 +46,6 @@ public interface UserService extends IService<User> {
      */
     User findByName(String userName);
 
-    /**
-     * 注册用户
-     *
-     * @param user
-     */
-    void save(User user);
 
     /**
      * 查询用户列表
@@ -60,5 +77,4 @@ public interface UserService extends IService<User> {
      */
     User findSimpleUserInfoById(Integer userId);
 
-    void removeById(Integer id);
 }

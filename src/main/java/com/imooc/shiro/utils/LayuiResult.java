@@ -1,9 +1,12 @@
 package com.imooc.shiro.utils;
 
 
+import lombok.Data;
+
 /**
  * 通用的返回的类
  */
+@Data
 public class LayuiResult {
     private int code;
     private String msg;
@@ -70,38 +73,5 @@ public class LayuiResult {
         result.setMsg(mssge);
         return result;
     }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
 
 }

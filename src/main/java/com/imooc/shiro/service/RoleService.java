@@ -29,4 +29,12 @@ public interface RoleService extends IService<Role> {
      * @return
      */
     List<RoleDto> findRoleListByUserId(Integer userId);
+
+    /**
+     * 根据userId查询角色集合
+     *
+     * @param userId
+     * @return
+     */
+    List<Role> findByUserId(Integer userId);
 }

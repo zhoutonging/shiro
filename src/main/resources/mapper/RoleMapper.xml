@@ -3,14 +3,14 @@
 <mapper namespace="com.imooc.shiro.mapper.RoleMapper">
 
     <resultMap id="roleMap" type="com.imooc.shiro.dto.RoleDto">
-        <id column="id" property="id" />
-        <result column="name" property="name" />
-        <result column="desc" property="desc" />
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="desc" property="desc"/>
         <collection property="permissionList" column="id" ofType="com.imooc.shiro.model.Permission">
-            <id column="id" property="id" />
-            <result column="name" property="name" />
-            <result column="desc" property="desc" />
-            <result column="url" property="url" />
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="desc" property="desc"/>
+            <result column="url" property="url"/>
         </collection>
     </resultMap>
 
@@ -18,5 +18,18 @@
     <sql id="Base_Column_List">
         id, name, desc_
     </sql>
+
+    <!--根据用户Id查询所拥有的角色-->
+    <select id="findByUserId" parameterType="java.lang.Integer" resultType="com.imooc.shiro.model.Role">
+        SELECT
+            a.id id,
+            a.NAME NAME,
+            a.`desc` `desc`
+        FROM
+            role a
+            LEFT JOIN user_role b ON a.id = b.rid
+        WHERE
+            b.uid =#{userId}
+    </select>
 
 </mapper>

@@ -87,8 +87,17 @@
                 });
 
             } else if (obj.event === 'edit') {
-
-                layer.alert('编辑行：<br>' + JSON.stringify(data))
+                var index = layer.open({
+                    type: 2,
+                    title: '编辑用户',
+                    content: '/userUpdate',
+                    area: ['100%', '100%'],
+                    success: function(layero, index){
+                        var iframe = window['layui-layer-iframe'+index];
+                        //调用子页面的全局函数
+                        iframe.child(data)
+                    }
+                });
 
             }
         });

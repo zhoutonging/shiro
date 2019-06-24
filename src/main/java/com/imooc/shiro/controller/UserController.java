@@ -7,12 +7,9 @@ import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserService;
 import com.imooc.shiro.utils.LayuiResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
@@ -71,6 +68,21 @@ public class UserController {
             return LayuiResult.fail("删除失败");
 
         }
+    }
+
+    /**
+     * 更新用户信息及角色信息
+     *
+     * @param user
+     * @param password
+     * @param roles
+     * @return
+     */
+    @PostMapping("modifyUserById")
+    public LayuiResult modifyUserById(User user, String password, String roles) {
+
+
+        return LayuiResult.success("");
     }
 
 }

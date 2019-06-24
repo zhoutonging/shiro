@@ -35,5 +35,17 @@ public class RoleController {
         return LayuiResult.success(roleList);
     }
 
+    /**
+     * 根据用户Id查询信息
+     *
+     * @param userId
+     * @return
+     */
+    @GetMapping("findByUserId")
+    public LayuiResult findByUserId(Integer userId) {
+        List<Role> roleList = roleService.findByUserId(userId);
+        return LayuiResult.success(roleList);
+    }
+
 }
 

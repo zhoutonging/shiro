@@ -11,6 +11,7 @@ import com.imooc.shiro.service.RoleService;
 import com.imooc.shiro.service.UserRoleService;
 import com.imooc.shiro.service.UserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -76,5 +77,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public void removeById(Integer id) {
         userRoleService.delete(new EntityWrapper<UserRole>().eq("uid", id));
         this.deleteById(Long.valueOf(id));
+    }
+
+    @Override
+    public void modifyByUserId(User user, String password) {
+
+
     }
 }
