@@ -13,6 +13,21 @@ import java.util.List;
  * @since 2019-06-11
  */
 public interface PermissionService extends IService<Permission> {
+
+    /**
+     * 添加父级权限
+     *
+     * @param permission
+     */
+    void save(Permission permission);
+
+    /**
+     * 设置子级权限
+     *
+     * @param permission
+     */
+    void saveSon(Permission permission);
+
     /**
      * 查询权限列表
      *

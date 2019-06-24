@@ -24,6 +24,17 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
     private PermissionMapper permissionMapper;
 
     @Override
+    public void save(Permission permission) {
+        permission.setBossId("0");
+        permissionMapper.insert(permission);
+    }
+
+    @Override
+    public void saveSon(Permission permission) {
+        permissionMapper.insert(permission);
+    }
+
+    @Override
     public List<Permission> findAll() {
         return permissionMapper.selectList(new EntityWrapper<>());
     }

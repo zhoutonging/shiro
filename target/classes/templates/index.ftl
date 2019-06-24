@@ -40,12 +40,12 @@
             <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
 
                 <li class="layui-nav-item" lay-unselect>
-                <a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">
-                <i class="layui-icon layui-icon-notice"></i>
+                    <a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">
+                        <i class="layui-icon layui-icon-notice"></i>
 
-                <!-- 如果有新消息，则显示小圆点 -->
-                <span class="layui-badge-dot"></span>
-                </a>
+                        <!-- 如果有新消息，则显示小圆点 -->
+                        <span class="layui-badge-dot"></span>
+                    </a>
                 </li>
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <a href="javascript:;" layadmin-event="theme">
@@ -92,23 +92,27 @@
                 </div>
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
                     lay-filter="layadmin-system-side-menu">
-                    <li data-name="home" class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;" lay-tips="授权管理" lay-direction="2">
-                            <i class="layui-icon layui-icon-auz"></i>
-                            <cite>授权管理</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd data-name="console" class="">
-                                <a lay-href="userManage">用户管理</a>
-                            </dd>
-                            <dd data-name="console">
-                                <a lay-href="roleManage">角色管理</a>
-                            </dd>
-                            <dd data-name="console">
-                                <a lay-href="permissionManage">权限管理</a>
-                            </dd>
-                        </dl>
-                    </li>
+                    <@shiro.hasRole name="admin">
+                        <li data-name="home" class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;" lay-tips="授权管理" lay-direction="2">
+                                <i class="layui-icon layui-icon-auz"></i>
+                                <cite>授权管理</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd data-name="console" class="">
+                                    <a lay-href="userManage">用户管理</a>
+                                </dd>
+
+                                <dd data-name="console">
+                                    <a lay-href="roleManage">角色管理</a>
+                                </dd>
+
+                                <dd data-name="console">
+                                    <a lay-href="permissionManage">权限管理</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </@shiro.hasRole>
                 </ul>
             </div>
         </div>

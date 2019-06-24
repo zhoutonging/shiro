@@ -36,7 +36,7 @@ public interface UserService extends IService<User> {
      * @param password 修改前密码
      */
 
-    void modifyByUserId(User user, String password);
+    void modifyByUserId(User user);
 
     /**
      * 根据用户名查询用户是否存在

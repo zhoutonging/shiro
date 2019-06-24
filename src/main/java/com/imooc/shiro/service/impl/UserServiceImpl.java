@@ -80,8 +80,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public void modifyByUserId(User user, String password) {
+    public void modifyByUserId(User user) {
+        userRoleService.delete(new EntityWrapper<UserRole>().eq("uid", user.getId()));
 
-
+        if (user.getPassword() != null && user.getPassword() != "") {
+            userMapper.updateById(user);
+        }
     }
 }

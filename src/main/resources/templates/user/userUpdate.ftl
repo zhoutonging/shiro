@@ -30,6 +30,16 @@
                 </div>
 
                 <div class="layui-form-item">
+                    <label class="layui-form-label">旧密码</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="oldPassword" autocomplete="off"
+                               placeholder="请输入旧密码"
+                               class="layui-input" id="oldPassword">
+                    </div>
+                    <span><i style="color: red">*</i>如果不填写则代表不修改密码</span>
+                </div>
+
+                <div class="layui-form-item">
                     <label class="layui-form-label">密码</label>
                     <div class="layui-input-inline">
                         <input type="password" name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off"
@@ -96,13 +106,6 @@
         //赋值
         $('#name').val(userInfo.name);
 
-        form.verify({
-            pass: [/(.+){6,12}$/, '密码必须6到12位'],
-            content: function (value) {
-                layedit.sync(editIndex);
-            }
-        });
-
         //查询用户所拥有的角色
         var roleLists = [];
         $.get('/role/findByUserId', {userId: userInfo.id}, function (res) {
@@ -147,12 +150,17 @@
                 roles.push(this.id);
             });
 
-            $.post('/register', {
+            var oldPassword = $('#oldPassword').val();
+
+            $.post('/user/modifyUserById', {
+                id: userInfo.id,
                 roles: JSON.stringify(roles),
                 name: data.field.userName,
-                password: data.field.password
+                password: data.field.password,
+                oldPassword: oldPassword,
+                salt: userInfo.salt
             }, function (res) {
-                if (res.success) {
+                if (res.code == 0) {
                     layer.msg(res.msg, {time: 2000, icon: 1});
                     var int = self.setInterval(function () {
                         parent.layer.close(index);

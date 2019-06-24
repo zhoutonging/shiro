@@ -2,6 +2,8 @@ package com.imooc.shiro.shiro;
 
 import com.imooc.shiro.dto.RolePermissionDto;
 import com.imooc.shiro.service.PermissionService;
+import com.jagregory.shiro.freemarker.ShiroTags;
+import freemarker.template.TemplateException;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -11,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import javax.servlet.Filter;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,5 +115,17 @@ public class ShiroConfig {
 //    public void Test(){
 //        System.out.println("ding是任務");
 //    }
+
+    @Bean
+    public FreeMarkerConfigurer freeMarkerConfigurer() throws IOException, TemplateException {
+        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+        freeMarkerConfigurer.setTemplateLoaderPath("classpath:templates/");
+        freemarker.template.Configuration configuration = freeMarkerConfigurer.createConfiguration();
+        configuration.setDefaultEncoding("UTF-8");
+        //这里可以添加其他共享变量 比如sso登录地址
+        configuration.setSharedVariable("shiro", new ShiroTags());
+        freeMarkerConfigurer.setConfiguration(configuration);
+        return freeMarkerConfigurer;
+    }
 
 }
