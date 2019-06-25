@@ -11,10 +11,15 @@ import com.imooc.shiro.service.UserService;
 import com.imooc.shiro.utils.LayuiResult;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.mgt.DefaultFilterChainManager;
+import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
+import org.apache.shiro.web.servlet.AbstractShiroFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.context.ConfigurableWebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +89,7 @@ public class UserController {
      * @param roles
      * @return
      */
-        @PostMapping("modifyUserById")
+    @PostMapping("modifyUserById")
     public LayuiResult modifyUserById(User user, String oldPassword, String roles) {
 
         if (oldPassword != null && oldPassword != "") {
@@ -136,6 +141,5 @@ public class UserController {
         }
         return LayuiResult.success("更新成功");
     }
-
 }
 
